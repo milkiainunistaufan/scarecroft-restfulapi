@@ -70,4 +70,16 @@ app.post('/api/portfolios', async (req, res) => {
   return res.status(201).json({ success: true, message: 'Portofolio berhasil ditambahkan!' });
 });
 
+// Endpoint Mengambil Semua Pesan Masuk untuk Dashboard Admin (GET)
+app.get('/api/messages', async (req, res) => {
+  const { data, error } = await supabase
+    .from('messages')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) return res.status(400).json({ error: error.message });
+  return res.status(200).json(data);
+});
+
+
 module.exports = app;
