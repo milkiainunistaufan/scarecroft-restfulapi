@@ -8,7 +8,7 @@ const app = express();
 // Konfigurasi CORS agar bisa ditembak oleh Landing Page & Dashboard Admin Anda
 const allowedOrigins = [
     'https://scarecroft-indonesia.vercel.app',
-    'https://scarecroft-backend.vercel.app/',
+    'https://scarecroft-backend.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000',
 ];
